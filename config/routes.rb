@@ -1,4 +1,27 @@
 Rails.application.routes.draw do
+
+  resources :restaurants, only: [:new, :create, :show, :index]
+
+  resources :restaurants do
+    resources :reviews, only: [:new, :create, :show]
+  end
+
+  # # See the list of all restaurants
+  # get 'restaurants', to: 'restaurants#index',
+
+  # # Add a restaurant and be rerouted to the show of this restaurants
+  # get 'restaurauts/new', to:'restaurants#new',
+  # post 'restaurants', to: 'restaurants#create',
+
+  # # See the details of a restaurant with all reviews related to this restaurant
+  # get 'restaurant/:id',
+
+  # #Add a new review to a restaurant
+
+  # get
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
